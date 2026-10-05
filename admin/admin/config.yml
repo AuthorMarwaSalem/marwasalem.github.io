@@ -1,0 +1,9 @@
+backend:
+  name: github
+  repo: AuthorMarwaSalem/marwasalem.github.io
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+site_url: "https://authormarwasalem.github.io/marwasalem.github.io/"
