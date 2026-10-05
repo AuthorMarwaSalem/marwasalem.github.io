@@ -7,3 +7,89 @@ media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
 site_url: "https://authormarwasalem.github.io/marwasalem.github.io/"
+
+collections:
+  - name: "novels"
+    label: "الروايات"
+    label_singular: "رواية"
+    folder: "content/novels"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: "اسم الرواية"
+        name: "title"
+        widget: "string"
+
+      - label: "اسم المؤلفة"
+        name: "author"
+        widget: "string"
+        default: "مروة سالم"
+
+      - label: "كوفر الرواية"
+        name: "cover"
+        widget: "image"
+
+      - label: "نبذة عن الرواية"
+        name: "description"
+        widget: "richtext"
+
+      - label: "حالة الرواية"
+        name: "status"
+        widget: "select"
+        options:
+          - label: "قيد الكتابة"
+            value: "ongoing"
+          - label: "مكتملة"
+            value: "completed"
+
+      - label: "تاريخ النشر"
+        name: "date"
+        widget: "datetime"
+
+      - label: "الرواية ظاهرة للزوار"
+        name: "published"
+        widget: "boolean"
+        default: true
+
+      - label: "محتوى إضافي"
+        name: "body"
+        widget: "richtext"
+        required: false
+
+  - name: "chapters"
+    label: "الفصول"
+    label_singular: "فصل"
+    folder: "content/chapters"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: "عنوان الفصل"
+        name: "title"
+        widget: "string"
+
+      - label: "الرواية"
+        name: "novel"
+        widget: "string"
+
+      - label: "رقم الفصل"
+        name: "chapter_number"
+        widget: "number"
+        value_type: "int"
+
+      - label: "صورة الفصل"
+        name: "thumbnail"
+        widget: "image"
+        required: false
+
+      - label: "تاريخ النشر"
+        name: "date"
+        widget: "datetime"
+
+      - label: "منشور"
+        name: "published"
+        widget: "boolean"
+        default: false
+
+      - label: "نص الفصل"
+        name: "body"
+        widget: "richtext"
